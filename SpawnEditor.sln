@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnEditor", "SpawnEditor.csproj", "{F16E9EC5-19BF-408E-97BC-3F12C986CA67}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Debug.ActiveCfg = Debug|.NET
+		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Debug.Build.0 = Debug|.NET
+		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Release.ActiveCfg = Release|.NET
+		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

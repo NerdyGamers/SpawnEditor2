@@ -1,0 +1,100 @@
+Spawn Editor (August 20, 2003)
+==============================
+* Updated the XmlSpawner to the latest version:
+  Modified XmlSpawner to be able to adjust the bounds of the spawn area.
+  See properties X1_Y1, X2_Y2 (Top left corner and bottom right corner respectively).
+  Also added a new property called ShowBounds. Set it to true and the
+  spawning area is shown using fire columns. Helps when tweaking the
+  spawn area using the client.
+
+Spawn Editor (July 15, 2003)
+============================
+* Added splitter bars to the left and right of the map to allow for more sizing control.
+* The 'Spawn Types' list box only shows items derived from Server.Item and
+  mobiles derived from Server.Mobile that have a default constructor with the
+  [Constructable] attribute. All other types are not shown since a spawner
+  would not be able to construct it.
+
+Spawn Editor (June 30, 2003)
+============================
+* Update the title bar to indicate what file was last loaded, merged or saved.
+
+Spawn Editor (June 26, 2003)
+============================
+* Updated XmlSpawner.cs to the latest version.
+* Added error handling if the RunUO exe specified in setup is not correct.
+
+Spawn Editor (June 15, 2003)
+============================
+* Upgraded to the latest UOMap.ocx (1.3.2) to support the Ultima Online 3D clients.
+* Fixed XmlSpawner.cs method Load_OnCommand() to properly import the Grouped flag.
+
+Spawn Editor (May 21, 2003)
+===========================
+* Upgraded to the latest UOMap.ocx (1.3) in order to support the Malas map.
+
+Spawn Editor (May 13, 2003)
+===========================
+* Added the use of the arrow keys to resize the spawn area using the 
+  Bounds dialog (XY button). Works as follows:
+    - Pressing the LEFT arrow decrements the X parameter by 1.
+    - Pressing the RIGHT arrow increments the X parameter by 1.
+    - Pressing the UP arrow decrements the Y parameter by 1.
+    - Pressing the DOWN arrow increments the Y parameter by 1.
+    - Pressing CTRL-LEFT arrow decrements the WIDTH parameter by 1.
+    - Pressing CTRL-RIGHT arrow increments the WIDTH parameter by 1.
+    - Pressing CTRL-UP arrow decrements the HEIGHT parameter by 1.
+    - Pressing CTRL-DOWN arrow increments the HEIGHT parameter by 1.
+    - Holding SHIFT will using any of the above keys changes the
+      increment from 1 to 5.
+
+* Added the ability to convert a spawn file from one map to another.
+  Only useful when spawning Trammel and Felucca.  If you want
+  to spawn the dungeons in Trammel and then use the same spawns in
+  Felucca, do the following:
+
+    1. Change the map selection to the map you want to convert the spawns into.
+
+    2. Right-Click on the LOAD button.  A context menu will appear saying:
+         'Force Load Into Current Map...'
+       Example:  Spawn file filled with Trammel dungeon spawns.
+
+    3. A dialog box will appear so you can choose the file to convert.
+
+    4. Select the file and click Ok.
+
+    5. The spawns should be loaded and forced to exist on the current map.
+
+    6. Make and changes you like and save the file as something else.
+
+* Added an installer to make life easier (I hope)
+
+* Fixed the crashing problem on startup if the RunUO exe or UO client exe
+  have moved since the last time the Spawn Editor was run.
+
+Spawn Editor (April 29, 2003)
+=============================
+* Added support for multiple maps (Trammel, Felucca, Ilshenar). Malas probably won't work but it is in the drop down list anyway.
+
+* Added updating of existing spawners (no more duplicates, just XmlSpawnerLoad <filename> to your hearts content). This only works if you are using XmlSpawner not the standard spawner. XmlSpawners now have a GUID attached to them when they are created in order to track each one uniquely. The only thing that does not happen is if you delete a spawner from the editor, it will NOT automatically be removed from the world when you load the spawn file. You will have to either delete the spawner manually in the world or wipe all of the XmlSpawners using XmlSpawnerWipe for the current map or XmlSpawnerWipeAll to wipe all XmlSpawner from the entire world. If you use the wipe options, just reload all of your spawn files again.
+
+* Added a Sync switch. With this option selected and a spawn is selected in the editor, the UO client will automatically teleport you to the spawners location. This saved me a lot of time when I had to fix the Z position of the vendor spawners in Papua (stupid raised buildings!).
+
+* Added a new spawner property in the editor called Relative Home Range. When this switch is checked, spawns will have there home location set to where they were spawned. If this is not selected, then the home location is set to the same location as the spawner that spawned the object. Did that make sense? This only works for the XmlSpawner.
+
+* Added to the Configuration screen, a command prefix entry just in case the command prefix has to change from '[' to something else. Also a client window entry was added just in case the default window titles don't seem to work with your client. Both of these settings relate to the Sync command mentioned earlier.
+
+* Updated SpawnEditorCommands.cs and XmlSpawner.cs due to the new functionality.
+
+
+Spawn Editor (April 27, 2003)
+=============================
+* Fix to XmlSpawner.cs so you can now use the [Add XmlSpawner command to place an empty spawner.
+
+* Added to SpawnEditorCommands.cs the [SpawnWipe command to remove all Spawner (not XmlSpawner) objects from the players current map.
+
+
+Spawn Editor (April 26, 2003)
+=============================
+* Initial Release
+

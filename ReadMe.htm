@@ -1,0 +1,434 @@
+<HTML>
+    <HEAD>
+        <TITLE>Spawn Editor</TITLE><LINK href="css/default.css" type="text/css" rel="stylesheet">
+        <!-- Start of header/navigation area -->
+        <!-- CARE MUST BE TAKEN WHEN MODIFYING ANYTHING WITHIN THE HEADER/NAVIGATION AREA --></HEAD>
+    <BODY>
+        <A name="#Top"></A>
+        <TABLE cellSpacing="0" cellPadding="0" width="100%" bgColor="#000080">
+            <TR>
+                <TD vAlign="top" bgColor="#555555" height="2"></TD>
+            </TR>
+            <TR>
+                <TD vAlign="top" bgColor="#c0c0c0" height="2"></TD>
+            </TR>
+            <TR>
+                <TD vAlign="top" bgColor="#555555" height="2"></TD>
+            </TR>
+            <!-- Spawn Editor Logo -->
+            <TR>
+                <TD vAlign="top"><FONT color="white" size="5">Spawn Editor</FONT></TD>
+            </TR>
+        </TABLE>
+        <!-- Menu System -->
+        <TABLE cellSpacing="0" cellPadding="0" width="100%" bgColor="#000040">
+            <TR>
+                <TD vAlign="top" bgColor="#555555" height="2" border="0"></TD>
+            </TR>
+            <TR>
+                <TD vAlign="top" bgColor="#c0c0c0" height="2" border="0"></TD>
+            </TR>
+            <TR>
+                <TD vAlign="top" bgColor="#555555" height="2" border="0"></TD>
+            </TR>
+            <!-- Button Elements -->
+        </TABLE>
+        <TABLE cellSpacing="0" cellPadding="0" width="100%" bgColor="#000040">
+            <TR>
+                <TD vAlign="top" bgColor="#555555" height="2" border="0"></TD>
+            </TR>
+            <TR>
+                <TD vAlign="top" bgColor="#c0c0c0" height="2" border="0"></TD>
+            </TR>
+            <TR>
+                <TD vAlign="top" bgColor="#555555" height="2" border="0"></TD>
+            </TR>
+        </TABLE>
+        <!-- End of top header/navigation area -->
+        <!-- ADD PAGE CONTENT BELOW THIS POINT -->
+        <P>
+            <FONT size="5">User Manual</FONT></P>
+        <P><A href="#Introduction"><FONT size="2">[Introduction]</FONT></A><FONT size="2">&nbsp;
+            </FONT><A href="#Overview"><FONT size="2">[Overview]</FONT></A><FONT size="2">&nbsp;
+            </FONT><A href="#Installation"><FONT size="2">[Installation]</FONT></A><FONT size="2">&nbsp;
+            </FONT><A href="#Configuration"><FONT size="2">[Configuration]</FONT></A><FONT size="2">&nbsp;&nbsp;</FONT>
+            <A href="#Commands"><FONT size="2">[Commands]</FONT></A><FONT size="2">&nbsp; <A href="#HowTo">
+                    [How-To]</A> </FONT>
+        </P>
+        <P>
+            <HR>
+        <P></P>
+        <P align="left"><A name="Introduction"><STRONG><EM><U>Introduction</U></EM></STRONG></A>&nbsp;
+            <FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <P align="left"><FONT size="2">Welcome to the Spawn Editor user manual.&nbsp; This 
+                document will try to explain how to use the editor to quickly and accurately 
+                create spawners in RunUO.</FONT></P>
+        <P align="left"><FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <hr>
+        <P align="left"><A name="Overview"><STRONG><EM><U>Overview</U></EM></STRONG></A>&nbsp;
+            <FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <P align="left"><FONT size="2">The main screen of Spawn Editor is broken down into 
+                three areas.&nbsp; The first area is the left panel which contains two groups 
+                of controls.&nbsp; The top group called <STRONG>Map Settings</STRONG> is used 
+                for configuring the application as well as some map behaviour controls.&nbsp; 
+                The bottom group is called <STRONG>Spawn Types</STRONG> and is used for 
+                selecting and displaying what type of objects the spawner is supposed to 
+                create.&nbsp; The <STRONG>Spawn Types</STRONG> list can be changed to show all 
+                items and mobiles, only items, or only mobiles.&nbsp; The bottom of the <STRONG>Spawn 
+                    Types</STRONG> group has a total count of the types currently available in 
+                the list.&nbsp; The second area of the application is the centre panel where 
+                the spawners can be edited visually.&nbsp; The map can be zoomed in or out 
+                using the zoom slider found in the <STRONG>Map Settings</STRONG> area of the 
+                left panel.&nbsp; The third area of the application is the right panel and 
+                contains two groups of controls.&nbsp; The top group is called <STRONG>Spawn 
+                    Details</STRONG> and is used to set the spawners properties.&nbsp; The 
+                bottom group is called the <STRONG>Spawn List</STRONG> and shows all of the 
+                spawners currently defined.</FONT></P>
+        <P align="left"><FONT size="2">The editor works based on the current version of RunUO 
+                and the scripts associated with it.&nbsp; When the editor starts for the first 
+                time, it attempts to load all types defined in the RunUO server by loading the 
+                assemblies of the following binaries:</FONT></P>
+        <UL dir="ltr" style="MARGIN-RIGHT: 0px">
+            <LI>
+                <DIV align="left"><FONT size="2">RunUO.exe</FONT></DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Scripts\Output\Scripts.dll</FONT></DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Scripts\Output\Scripts.CS.dll</FONT></DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Scripts\Output\Scripts.VB.dll</FONT></DIV>
+            </LI>
+        </UL>
+        <P align="left"><FONT size="2">This reason for this is to populate the <STRONG>Spawn Types</STRONG>
+                control located in the left panel of the editor.&nbsp; Therefore, it is 
+                necessary to have compiled all RunUO scripts prior to starting the editor, 
+                otherwise no types will appear in the list.&nbsp; The other requirement for the 
+                editor to work is that it must have access to any <STRONG>map*.mul</STRONG> files 
+                required to draw the map in the centre panel which leads us to the 
+                configuration of the application.</FONT></P>
+        <P align="left"><FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <hr>
+        <P align="left"><A name="Installation"><U><EM><STRONG>Installation</STRONG></EM></U></A><FONT size="2">&nbsp;
+            </FONT><A href="#Top"><FONT size="2">[Top]</FONT></A></P>
+        <OL>
+            <LI>
+                <DIV align="left"><FONT size="2">Run the Spawn Editor installer, <STRONG>Setup.msi</STRONG>.&nbsp; 
+                        This will install the editor and register the UOMap.ocx.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Take the file <B>SpawnEditorCommands.cs</B> from the 
+                        directory created in step 1 and place it into your <B>RunUO\Scripts\Commands</B>
+                        directory.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Take the file <STRONG>XmlSpawner.cs</STRONG> from the 
+                        directory created in step 1 and place it into your <STRONG>RunUo\Scripts\Engines\Spawner</STRONG>
+                        directory.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Go to Start... Programs... Spawn Editor... and click 
+                        on the <B>SpawnEditor</B> &nbsp;shortcut to launch the editor.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">If this is the first time running Spawn Editor, you 
+                        will be brought to the <B>Configuration </B>screen to specify the directories 
+                        where <B>RunUO</B> and your <B>Ultima Online</B> client reside. Spawn Editor 
+                        will attempt to automatically find your UO client based on the current registry 
+                        settings for UO. If this is incorrect, simply change the directory to point to 
+                        any valid UO map files.&nbsp; See the <A href="#Configuration">Configuration</A>
+                        section for more information on the items in the dialog.<BR>
+                        <BR>
+                        <STRONG><EM><U>NOTE</U></EM></STRONG>:&nbsp; .NET applications have security 
+                        restrictions imposed on them by default.&nbsp; If you would like to run the 
+                        Spawn Editor from a share or any mapped drive you will need to do the 
+                        following:<BR>
+                        <BR>
+                        i.&nbsp; Click on Start... Settings... Control Panel... Administrative Tools... <STRONG>
+                            Microsoft .NET Framework Wizards</STRONG>...<BR>
+                        <BR>
+                        ii. Click on <STRONG>Adjust .net Security</STRONG>
+                        <BR>
+                        <BR>
+                        iii. Select <STRONG>Make changes to this computer</STRONG> and click <STRONG>Next</STRONG>.<BR>
+                        <BR>
+                        iv. Click on <STRONG>Local Intranet</STRONG> and move the slider up to the top 
+                        marker where it says <STRONG>Full Trust</STRONG>.<BR>
+                        <BR>
+                        v. Click <STRONG>Next</STRONG> and then click <STRONG>Finish</STRONG>. </FONT>
+                    <FONT size="2">
+                        <BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">All Done! Happy Spawning!<BR>
+                        <BR>
+                        <BR>
+                        <B>Note</B>: An additional RunUO spawner script is included called <B>XmlSpawner</B>
+                        which is what Spawn Editor natively supports as a spawner. You don't have to 
+                        use it, but it does have a slightly better gump than the standard spawner 
+                        object and you can define a rectangle rather than a regular square spawn area 
+                        with it. Spawn Editor was originally developed with <B>XmlSpawner</B> in mind. 
+                        Just place XmlSpawner in <B>RunUO\Scripts\Engines\Spawner</B> folder and 
+                        recompile as stated in step 4 above. </FONT>
+                </DIV>
+            </LI>
+        </OL>
+        <P align="left"><FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <hr>
+        <P align="left"><A name="Configuration"><STRONG><EM><U>Configuration</U></EM></STRONG></A>&nbsp;
+            <FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <P align="left"><FONT size="2">The editor needs a bit of configuration before it can 
+                work.&nbsp; There are two key pieces of information that must be supplied to 
+                the editor for it to function properly.&nbsp; These are:</FONT></P>
+        <UL dir="ltr" style="MARGIN-RIGHT: 0px">
+            <LI>
+                <DIV align="left"><FONT size="2">Path to the RunUO executable</FONT></DIV>
+            <LI>
+                <DIV align="left"><FONT size="2">Path to the Ultima Online client executable</FONT></DIV>
+            </LI>
+        </UL>
+        <P align="left"><FONT size="2">These items, along with a few other options can be 
+                configured in the <STRONG>Configuration</STRONG> dialog.&nbsp; The <STRONG>Configuration</STRONG>
+                dialog will appear the first time the application is started.&nbsp; The 
+                configuration is stored on a per user basis in the current users registry key 
+                under the following path:</FONT></P>
+        <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+            <P align="left"><FONT size="2">HKEY_CURRENT_USER\Software\Spawn Editor</FONT></P>
+        </BLOCKQUOTE>
+        <P dir="ltr" align="left"><FONT size="2">All configuration information used by the 
+                editor is stored in this area of the registry.&nbsp; The items that can be 
+                configured are listed below:</FONT></P>
+        <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+            <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>RuUO.EXE</STRONG></FONT></P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">To configure the 
+                        path to the RunUO executable, click on the button to the right of the path 
+                        field and&nbsp;an open file dialog will appear.&nbsp; Browse to the location of 
+                        the RunUO.exe and select the file and click OK.</FONT></P>
+            </BLOCKQUOTE>
+            <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>Ultima Client</STRONG></FONT></P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">The path to the 
+                        Ultima client is configured automatically for you by the application based on 
+                        the registry keys used by the Ultima Online client.&nbsp; This has been tested 
+                        with all clients except for the Age Of Shadows client.&nbsp; If the client can 
+                        not be determined by
+                        <BR>
+                        the application at startup, click on the button to the right of the path field 
+                        and browse to the folder where the Ultima client is located.&nbsp; Select the <STRONG>
+                            client.exe</STRONG> or <STRONG>uotd.exe</STRONG> and click OK.&nbsp; This 
+                        does two things.&nbsp; First, is to provide the editor with the path to all of 
+                        the neccessary client files, namely the <STRONG>map*.mul</STRONG> files.&nbsp; 
+                        The second is to set the default <STRONG>Client Window</STRONG> setting used 
+                        when the <STRONG>Sync</STRONG> option is checked in the editor.&nbsp; This is 
+                        needed to send commands (keystrokes) to the client window if neccessary.</FONT></P>
+            </BLOCKQUOTE>
+            <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>Default Zoom 
+                        Level</STRONG></FONT></P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">This sets the 
+                        default zoom level when the editor starts.</FONT></P>
+            </BLOCKQUOTE>
+            <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>Command Prefix</STRONG></FONT></P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">This sets the 
+                        default command prefix to be used when sending commands to the client window.</FONT></P>
+            </BLOCKQUOTE>
+            <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>Client Window</STRONG></FONT></P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">The client window is 
+                        used to set the default client window title of the Ultima client.&nbsp; This is 
+                        automatically set when the Ultima client path is selected of the client is 
+                        either <STRONG>client.exe</STRONG> or <STRONG>uotd.exe</STRONG>.&nbsp; If any 
+                        other file is selected as the Ultima client, this value will default to <STRONG>???</STRONG>
+                        and will then have to be manually configured if the <STRONG>Sync</STRONG> option 
+                        is to operate properly.</FONT></P>
+            </BLOCKQUOTE>
+            <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>Default Spawn 
+                        Details</STRONG></FONT></P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">The default values 
+                        for a new spawner can be set here.&nbsp; When the <STRONG>Restored Defaults </STRONG>
+                        button is pressed in the <STRONG>Spawn Details</STRONG> group located in the 
+                        top right panel, these values will be loaded.</FONT></P>
+            </BLOCKQUOTE></BLOCKQUOTE>
+        <P dir="ltr" style="MARGIN-RIGHT: 0px" align="left"><FONT size="2">After all of these 
+                values have been set, the editor should be able to operate normally.&nbsp; If 
+                any of these values need to be changed at a later date, click on the <STRONG>Setup</STRONG>
+                button in the <STRONG>Map Settings</STRONG> group located in the top left panel 
+                of the editor.</FONT></P>
+        <P align="left"><FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <hr>
+        <P align="left"><A name="Commands"><U><EM><STRONG>Commands</STRONG></EM></U></A>&nbsp;
+            <FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <P align="left"><FONT size="2">Since you probably have a few spawns defined already 
+                using the spawner that comes with RunUO, there are a few commands that will 
+                help to get those spawns into the editor.&nbsp; The commands are defined in the <STRONG>
+                    SpawnEditorCommands.cs</STRONG> script and are as follows:</FONT></P>
+        <UL>
+            <LI>
+                <DIV align="left"><FONT size="2"><STRONG>SpawnShowAll</STRONG><BR>
+                        Shows all spawners by making them visible and changing their object id to that 
+                        of a ships mast for easy visiblity.<BR>
+                        Use this command to make all of the spawners more visible.&nbsp; Useful when 
+                        trying to find spawners with incorrect Z values.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2"><STRONG>SpawnHideAll</STRONG><BR>
+                        Hides all spawners by making them invisible and reverting them back to their 
+                        normal object id.<BR>
+                        Use this command to undo the <STRONG>SpawnShowAll</STRONG> command.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2"><STRONG>SpawnWipe</STRONG><BR>
+                        Wipes ALL spawners from the current map.<BR>
+                        The current map is based on the map where the mobile who issued the command is 
+                        located.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2"><STRONG>SpawnSave &lt;FileName&gt;</STRONG><BR>
+                        Saves all spawner information for the current map to the file name specified 
+                        which can then be loaded in Spawn Editor.<BR>
+                        Creates an XML based file that the Spawn Editor and the XmlSpawner class can 
+                        both use.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2"><STRONG>SpawnLoad &lt;FileName&gt;</STRONG><BR>
+                        Loads all spawner information from the file specified (file created by the <STRONG>Spawn 
+                            Editor</STRONG> or <STRONG>SpawnSave</STRONG> or <STRONG>XmlSpawnerSave</STRONG>
+                        command).<BR>
+                        Uses the XML based file that the Spawn Editor&nbsp;or the&nbsp;XmlSpawner class 
+                        created to populate a world.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV align="left"><FONT size="2"><STRONG>SpawnEditorGo &lt;map&gt; | &lt;map&gt; &lt;x&gt; 
+                            &lt;y&gt; [&lt;z&gt;]</STRONG><BR>
+                        Go command used with the Spawn Editor when the <STRONG>Sync</STRONG> option is 
+                        checked, takes the name of the map as the first parameter.</FONT></DIV>
+            </LI>
+        </UL>
+        <P align="left"><FONT size="2"></FONT>&nbsp;</P>
+        <P align="left"><FONT size="2">The <STRONG>XmlSpawner.cs</STRONG> script contains all 
+                of the commands, gumps, and spawner code needed to use the <STRONG>XmlSpawner</STRONG>
+                object that is designed to work with the Spawn Editor.&nbsp; The commands used 
+                by the <STRONG>XmlSpawner</STRONG> object are as follows:</FONT></P>
+        <UL dir="ltr">
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerShowAll</STRONG><BR>
+                        Makes all XmlSpawner objects visible and movable and also changes the item id 
+                        to a blue ships mast for easy identification.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerHideAll</STRONG><BR>
+                        Makes all XmlSpawner objects invisible and unmovable and returns the object id 
+                        to the default value.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerWipe</STRONG><BR>
+                    </FONT><FONT size="2">Removes all XmlSpawner objects from the current map.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerWipeAll<BR>
+                        </STRONG>Removes all XmlSpawner objects from the <STRONG>entire world</STRONG>.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerLoad</STRONG><BR>
+                        Loads XmlSpawner objects into the world as defined in the file specified (file 
+                        created by <STRONG>Spawn Editor</STRONG> or <STRONG>XmlSpawnerSave</STRONG> or <STRONG>
+                            SpawnSave</STRONG>).<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerSave</STRONG><BR>
+                        Saves all XmlSpawner objects from the current map into the file specified.<BR>
+                    </FONT>
+                </DIV>
+            <LI>
+                <DIV style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><STRONG>XmlSpawnerSaveAll</STRONG><BR>
+                        Saves <STRONG>ALL </STRONG>XmlSpawner objects from the <STRONG>entire world</STRONG>
+                        into the file specified.<BR>
+                    </FONT>
+                </DIV>
+            </LI>
+        </UL>
+        <P style="MARGIN-RIGHT: 0px" align="left"><FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+        <HR>
+        <P align="left"><A name="Saving"><A name="#HowTo"><U><EM><STRONG>How-To</STRONG></EM></U></A>&nbsp;
+                <FONT size="2"></A><A href="#Top">[Top]</A></FONT></P>
+        <P align="left"><FONT size="2">Below are some short tutorials on how to use the Spawn 
+                Editor to create an manipulate spawns.</FONT></P>
+        <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+            <P align="left"><FONT size="2"><STRONG><EM>Creating A Spawner</EM></STRONG></FONT></P>
+            <OL>
+                <LI>
+                    <DIV align="left"><FONT size="2">Pick the desired map from the list of maps in the <STRONG>Map 
+                                Settings</STRONG> area in the top left panel.&nbsp; Lets pick <STRONG>Trammel</STRONG>.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Left-Click on the map to move the map to the desired 
+                            position.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Zoom in/out of the map using the slider in the <STRONG>Map 
+                                Settings</STRONG> area to make defining the spawn area easier.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Left-Click in the top-left corner of the spawn area 
+                            and drag the mouse down to the bottom-right corner of the spawn area.&nbsp; A 
+                            white rectangle should be displayed showing the area that the spawner will 
+                            define.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Use the <STRONG>Spawn Types</STRONG> list to select 
+                            what type of mobiles and/or items you would like to spawn in this area.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Give the spawner a name by changing the default name 
+                            in the <STRONG>Spawn Details</STRONG> area in the top right panel.&nbsp; Lets 
+                            call it <STRONG>Trammel1.</STRONG></FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Set the rest of the spawner properties in the <STRONG>Spawn 
+                                Details</STRONG> area as required.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Right-Click within the white rectangle.&nbsp; This 
+                            will create the spawner and add it to the <STRONG>Spawn List</STRONG> in the 
+                            bottom right panel.&nbsp; The spawn rectangle should now change from white to 
+                            light blue.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Click on the <STRONG>Save</STRONG> button in the <STRONG>Spawn 
+                                List</STRONG> and save it to a file called <STRONG>MySpawner.xml </STRONG>into 
+                            your RunUO directory.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Start RunUO (did you place the SpawnEditorCommands.cs 
+                            and XmlSpawner.cs in the RunUO scripts directory? If not go back to the <A href="#Installation">
+                                Installation</A> section and complete this step).</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Login to RunUO with and administrator account.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Load the spawn file just save using the command <STRONG>[XmlSpawnerLoad 
+                                MySpawner.xml</STRONG></FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">To see the spawner, go back to Spawn Editor and click 
+                            on the <STRONG>Sync</STRONG> check box so that it has a check mark beside it.</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">Click on the spawner you created in the <STRONG>Spawn List</STRONG>
+                            (Trammel1).</FONT></DIV>
+                <LI>
+                    <DIV align="left"><FONT size="2">You should be teleported to the exact location of the 
+                            spawner.<BR>
+                        </FONT><FONT size="2"></FONT>
+                    </DIV>
+                </LI>
+            </OL>
+        </BLOCKQUOTE>
+        <P align="left"><FONT size="2"><A href="#Top">[Top]</A></FONT></P>
+    </BODY>
+</HTML>
