@@ -1,21 +1,22 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnEditor", "SpawnEditor.csproj", "{F16E9EC5-19BF-408E-97BC-3F12C986CA67}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnEditor", "SpawnEditor.csproj", "{23D03CA5-05C8-40B4-804E-37F805A681C6}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Debug.ActiveCfg = Debug|.NET
-		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Debug.Build.0 = Debug|.NET
-		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Release.ActiveCfg = Release|.NET
-		{F16E9EC5-19BF-408E-97BC-3F12C986CA67}.Release.Build.0 = Release|.NET
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23D03CA5-05C8-40B4-804E-37F805A681C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D03CA5-05C8-40B4-804E-37F805A681C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D03CA5-05C8-40B4-804E-37F805A681C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D03CA5-05C8-40B4-804E-37F805A681C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
