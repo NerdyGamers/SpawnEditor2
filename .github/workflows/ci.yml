@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - '**.cs'
+      - '**.resx'
+      - 'SpawnEditor.csproj'
+      - 'SpawnEditor.sln'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    paths:
+      - '**.cs'
+      - '**.resx'
+      - 'SpawnEditor.csproj'
+      - 'SpawnEditor.sln'
+      - '.github/workflows/ci.yml'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'
+      - name: Build
+        run: dotnet build SpawnEditor.sln
