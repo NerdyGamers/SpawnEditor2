@@ -20,3 +20,4 @@ This repository contains a legacy C# Windows Forms application (Spawn Editor) fo
 
 ## Next steps
 - Consider adding tests or updating the project to a modern .NET version in the future.
+- Track long-term tasks in `todo.md` and keep it updated as work progresses.
