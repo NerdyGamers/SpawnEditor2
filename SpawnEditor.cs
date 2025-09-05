@@ -1227,7 +1227,7 @@ namespace SpawnEditor
                 if( this._SelectionWindow == null )
                     this.stbMainLabel.Text = string.Format( "[X={0} Y={1} H={2}]", MapCentreX, MapCentreY, MapCentreZ );
             }
-            else if( e.button == 1 )
+            else if( e.Button == MouseButtons.Left )
             {
                 // Check if a selection has been started
                 if( this._SelectionWindow != null )
@@ -1989,14 +1989,15 @@ namespace SpawnEditor
                 case WorldMap.Trammel:
                     this.axUOMap.MapFile = (short)WorldMap.Trammel;
                     this.axUOMap.SetCenter( 3072, 2048 );
-                    this.axUOMap.xCenter = 3072;                    this.axUOMap.yCenter = 2048;                    break;
+                    break;
+                    this.axUOMap.SetCenter( 3072, 2048 );
+                    break;
+                    this.axUOMap.SetCenter( 1150, 800 );
+                    break;
 
-                case WorldMap.Felucca:
-                    this.axUOMap.MapFile = (short)WorldMap.Trammel; // Same viewable map as Trammel
-                    this.axUOMap.SetCenter( 3072, 2048 );                    this.axUOMap.xCenter = 3072;                    this.axUOMap.yCenter = 2048;                    break;
-
-                case WorldMap.Ilshenar:
-                    this.axUOMap.MapFile = (short)WorldMap.Ilshenar;
+                    this.axUOMap.SetCenter( 1280, 1024 );
+                    break;
+                    // Send the command
                     this.axUOMap.SetCenter( 1150, 800 );                    this.axUOMap.xCenter = 1150;                    this.axUOMap.yCenter = 800;                    break;
 
                 case WorldMap.Malas:
