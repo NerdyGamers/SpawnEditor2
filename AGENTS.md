@@ -16,7 +16,6 @@ This repository contains a legacy C# Windows Forms application (Spawn Editor) fo
 
 ## Assets
 - Designer-generated files (`*.resx`) and associated code must stay in sync.
-- COM dependencies (e.g., `UOMap.ocx`, `AxUOMAPLib.dll`) are required for building and running the application.
 
 ## Next steps
 - Consider adding tests or updating the project to a modern .NET version in the future.

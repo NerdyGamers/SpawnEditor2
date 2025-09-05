@@ -9,7 +9,7 @@ Legacy Windows Forms application for creating Ultima Online spawns.
    ```sh
    dotnet build SpawnEditor.sln
    ```
-3. The project depends on `UOMap.ocx` and `AxUOMAPLib.dll`; ensure these COM components are registered on your system.
+3. A managed map control has replaced the legacy COM component; no COM registration is required.
 
 ## Tests
 

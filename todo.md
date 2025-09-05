@@ -5,8 +5,11 @@
   - [x] Resolve build errors and update `TargetFramework` to `net6.0-windows` (build still fails: WindowsDesktop reference pack missing on non-Windows host).
   - [x] Replace deprecated WinForms controls (`ContextMenu`, `StatusBar`) with supported alternatives.
 - [ ] Replace COM dependencies with managed alternatives
-  - [ ] Research libraries to replace `UOMap.ocx` and `AxUOMAPLib.dll`
+  - [x] Research libraries to replace `UOMap.ocx` and `AxUOMAPLib.dll`
     - Investigated `ClassicUO/ClassicUO` and `UOMap/uomap-client`; no drop-in WinForms control identified yet.
+  - [x] Implement basic managed map control
+  - [ ] Render actual map tiles and spawn overlays
+  - [ ] Remove COM references from setup project
 - [ ] Add automated unit tests
   - [x] Choose a test framework (NUnit) and set up a test project.
   - [x] Write tests covering existing functionality.

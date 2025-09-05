@@ -9,7 +9,6 @@ using System.Text;
 using System.Xml;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using UOMAPLib;
 
 namespace SpawnEditor
 {
@@ -36,7 +35,7 @@ namespace SpawnEditor
         private Type[] _RunUOScriptTypes;
         private SelectionWindow _SelectionWindow = null;
 
-        private AxUOMAPLib.AxUOMap axUOMap;
+        private ManagedMap axUOMap;
         private System.Windows.Forms.ToolTip ttpSpawnInfo;
         private System.Windows.Forms.Panel pnlControls;
         private System.Windows.Forms.TrackBar trkZoom;
@@ -235,7 +234,7 @@ namespace SpawnEditor
 		{
             this.components = new System.ComponentModel.Container();
             System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(SpawnEditor));
-            this.axUOMap = new AxUOMAPLib.AxUOMap();
+            this.axUOMap = new ManagedMap();
             this.ttpSpawnInfo = new System.Windows.Forms.ToolTip(this.components);
             this.btnSaveSpawn = new System.Windows.Forms.Button();
             this.btnLoadSpawn = new System.Windows.Forms.Button();
@@ -294,7 +293,6 @@ namespace SpawnEditor
             this.mniForceMerge = new System.Windows.Forms.ToolStripMenuItem();
             this.splLeft = new System.Windows.Forms.Splitter();
             this.splRight = new System.Windows.Forms.Splitter();
-            ((System.ComponentModel.ISupportInitialize)(this.axUOMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trkZoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnMaxDelay)).BeginInit();
@@ -315,12 +313,11 @@ namespace SpawnEditor
             this.axUOMap.Enabled = true;
             this.axUOMap.Location = new System.Drawing.Point(168, 0);
             this.axUOMap.Name = "axUOMap";
-            this.axUOMap.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axUOMap.OcxState")));
             this.axUOMap.Size = new System.Drawing.Size(456, 551);
             this.axUOMap.TabIndex = 1;
-            this.axUOMap.MouseMoveEvent += new AxUOMAPLib._DUOMapEvents_MouseMoveEventHandler(this.axUOMap_MouseMoveEvent);
-            this.axUOMap.MouseDownEvent += new AxUOMAPLib._DUOMapEvents_MouseDownEventHandler(this.axUOMap_MouseDownEvent);
-            this.axUOMap.MouseUpEvent += new AxUOMAPLib._DUOMapEvents_MouseUpEventHandler(this.axUOMap_MouseUpEvent);
+            this.axUOMap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.axUOMap_MouseMoveEvent);
+            this.axUOMap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axUOMap_MouseDownEvent);
+            this.axUOMap.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axUOMap_MouseUpEvent);
             // 
             // ttpSpawnInfo
             // 
@@ -1003,7 +1000,6 @@ namespace SpawnEditor
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Spawn Editor";
             this.Load += new System.EventHandler(this.SpawnEditor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axUOMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trkZoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnTeam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spnMaxDelay)).EndInit();
@@ -1030,15 +1026,15 @@ namespace SpawnEditor
 			Application.Run(new SpawnEditor());
 		}
 
-        private void axUOMap_MouseDownEvent(object sender, AxUOMAPLib._DUOMapEvents_MouseDownEvent e)
+        private void axUOMap_MouseDownEvent(object sender, MouseEventArgs e)
         {
             // Calculate the map location
-            short MapCentreX = this.axUOMap.CtrlToMapX( (short)e.x );
-            short MapCentreY = this.axUOMap.CtrlToMapY( (short)e.y );
+            short MapCentreX = this.axUOMap.CtrlToMapX( (short)e.X );
+            short MapCentreY = this.axUOMap.CtrlToMapY( (short)e.Y );
             short MapCentreZ = this.axUOMap.GetMapHeight( MapCentreX, MapCentreY );
 
             // Check which mouse button was pressed down
-            if( e.button == 1 )
+            if( e.Button == MouseButtons.Left )
             {
                 // Left mouse button
 
@@ -1062,7 +1058,7 @@ namespace SpawnEditor
                 this._SelectionWindow.Index = this.axUOMap.AddDrawRect( this._SelectionWindow.X, this._SelectionWindow.Y, (short)1, (short)1, 2, 0x00FFFFFF );
 
             }
-            else if( e.button == 2 )
+            else if( e.Button == MouseButtons.Right )
             {
                 // Right mouse button
 
@@ -1159,11 +1155,11 @@ namespace SpawnEditor
             this.RefreshSpawnPoints();
         }
 
-        private void axUOMap_MouseUpEvent(object sender, AxUOMAPLib._DUOMapEvents_MouseUpEvent e)
+        private void axUOMap_MouseUpEvent(object sender, MouseEventArgs e)
         {
             // Calculate the map location
-            short MapCentreX = this.axUOMap.CtrlToMapX( (short)e.x );
-            short MapCentreY = this.axUOMap.CtrlToMapY( (short)e.y );
+            short MapCentreX = this.axUOMap.CtrlToMapX( (short)e.X );
+            short MapCentreY = this.axUOMap.CtrlToMapY( (short)e.Y );
             short MapCentreZ = this.axUOMap.GetMapHeight( MapCentreX, MapCentreY );
 
             // Check which mouse button was pressed down ( don't bother, it is always 0)
@@ -1189,14 +1185,14 @@ namespace SpawnEditor
             }
         }
 
-        private void axUOMap_MouseMoveEvent(object sender, AxUOMAPLib._DUOMapEvents_MouseMoveEvent e)
+        private void axUOMap_MouseMoveEvent(object sender, MouseEventArgs e)
         {
             // Calculate the map location
-            short MapCentreX = this.axUOMap.CtrlToMapX( (short)e.x );
-            short MapCentreY = this.axUOMap.CtrlToMapY( (short)e.y );
+            short MapCentreX = this.axUOMap.CtrlToMapX( (short)e.X );
+            short MapCentreY = this.axUOMap.CtrlToMapY( (short)e.Y );
             short MapCentreZ = this.axUOMap.GetMapHeight( MapCentreX, MapCentreY );
 
-            if( e.button == 0 )
+            if( e.Button == MouseButtons.None )
             {
                 string Tip = string.Empty;
 
