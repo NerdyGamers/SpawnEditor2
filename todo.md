@@ -8,14 +8,18 @@
   - [x] Research libraries to replace `UOMap.ocx` and `AxUOMAPLib.dll`
     - Investigated `ClassicUO/ClassicUO` and `UOMap/uomap-client`; no drop-in WinForms control identified yet.
   - [x] Implement basic managed map control
-  - [ ] Render actual map tiles and spawn overlays
-  - [ ] Remove COM references from setup project
+    - [x] Render actual map tiles and spawn overlays
+    - [x] Remove COM references from setup project
+    - [x] Render static tiles and cache blocks for speed
 - [ ] Add automated unit tests
   - [x] Choose a test framework (NUnit) and set up a test project.
   - [x] Write tests covering existing functionality.
 - [ ] Introduce continuous integration
   - [x] Create a GitHub Actions workflow to run `dotnet build`.
+  - [x] Build on Windows runners.
   - Next: Ensure workflow passes once project builds successfully.
+- [ ] Verify static tile rendering accuracy across the entire map (elevations, hues).
+- [ ] Profile large map rendering for performance improvements.
 - [ ] Improve developer documentation
   - [x] Document build and setup steps in `README.md`.
   - Next: Expand usage examples and contribution guidelines.

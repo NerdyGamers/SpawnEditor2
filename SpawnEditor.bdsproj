@@ -92,9 +92,6 @@
 			<File FileName="C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Drawing.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="System.Drawing" AssemblyName="System.Drawing"/>
 			<File FileName="C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.Windows.Forms.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="System.Windows.Forms" AssemblyName="System.Windows.Forms"/>
 			<File FileName="C:\WINNT\Microsoft.NET\Framework\v1.0.3705\System.XML.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="System.XML" AssemblyName="System.Xml"/>
-			<File FileName="ComImports\Interop.stdole.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="Interop.stdole" Guid="{00020430-0000-0000-C000-000000000046}" WrapperTool="tlbimp" Lcid="0" Version="2.0"/>
-			<File FileName="UOMAPLib.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="UOMAPLib" AssemblyName="UOMAPLib"/>
-			<File FileName="AxUOMAPLib.dll" ContainerId="DotNetAssemblyCompiler" ModuleName="AxUOMAPLib" AssemblyName="AxUOMAPLib"/>
 			<File FileName="Amount.cs" ContainerId="CSharpCompiler" ModuleName="Amount" FileTypeString="System.Windows.Forms.Form" RootComponentClassName="SpawnEditor.Amount"/>
 			<File FileName="Amount.resx" ModuleName="Amount" Parent="Amount.cs"/>
 			<File FileName="App.ico" ContainerId="" ModuleName="App" BuildAction="Content"/>

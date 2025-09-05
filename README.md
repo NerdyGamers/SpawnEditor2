@@ -4,12 +4,18 @@ Legacy Windows Forms application for creating Ultima Online spawns.
 
 ## Build
 
-1. Install the .NET SDK (8.0 or later).
-2. Restore and build the solution:
-   ```sh
-   dotnet build SpawnEditor.sln
-   ```
-3. A managed map control has replaced the legacy COM component; no COM registration is required.
+1. On Windows, run `./build.ps1` to install the .NET SDK and build the solution.
+2. A managed map control renders land and static tiles and requires no COM registration.
+
+### Cross-platform builds
+
+Windows Forms targets the Windows desktop stack. On non-Windows hosts, cross-compiling is possible with:
+
+```
+dotnet build SpawnEditor.sln -p:EnableWindowsTargeting=true
+```
+
+The generated binaries still require Windows to run. This repository includes a GitHub Actions workflow that builds on `windows-latest`.
 
 ## Tests
 
