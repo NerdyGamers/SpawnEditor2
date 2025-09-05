@@ -9,14 +9,6 @@
 	    <AssemblyName>SpawnEditor</AssemblyName>
 	    <ApplicationIcon>App.ico</ApplicationIcon>
 	</PropertyGroup>
-        <ItemGroup>
-            <Reference Include="UOMAPLib">
-                <HintPath>UOMAPLib.dll</HintPath>
-            </Reference>
-            <Reference Include="AxUOMAPLib">
-                <HintPath>AxUOMAPLib.dll</HintPath>
-            </Reference>
-        </ItemGroup>
 	<ItemGroup>
 	    <Content Include="Changes.txt" />
 	    <Content Include="ReadMe.htm" />
