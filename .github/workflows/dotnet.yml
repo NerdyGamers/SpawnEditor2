@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
+      - name: Install .NET 6
+        run: bash ./install-net6
       - run: dotnet build SpawnEditor.sln
