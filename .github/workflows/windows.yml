@@ -2,7 +2,6 @@ name: Windows Build
 
 on:
   push:
-    branches: [ master ]
   pull_request:
 
 jobs:
@@ -10,5 +9,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
       - uses: microsoft/setup-msbuild@v2
-      - run: .\install-dotnet.ps1
+      - name: Install Windows Desktop workload
+        run: dotnet workload install windowsdesktop
+      - run: dotnet build SpawnEditor.sln

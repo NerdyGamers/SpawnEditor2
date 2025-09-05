@@ -17,7 +17,7 @@
 - [ ] Introduce continuous integration
   - [x] Create a GitHub Actions workflow to run `dotnet build`.
   - [x] Build on Windows runners.
-  - Next: Ensure workflow passes once project builds successfully.
+  - Next: Verify Windows workflow passes after adding Windows Desktop workload installation.
 - [ ] Verify static tile rendering accuracy across the entire map (elevations, hues).
 - [ ] Profile large map rendering for performance improvements.
 - [ ] Improve developer documentation
