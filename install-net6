@@ -1,7 +1,11 @@
-#!/bin/bash
-wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+# Download the Microsoft package repository configuration
+wget https://packages.microsoft.com/config/ubuntu/24.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
+# Register the Microsoft package repository on your system
 sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update; \
-  sudo apt-get install -y apt-transport-https && \
-  sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0
+
+# Refresh package lists to include Microsoft's repo
+sudo apt update
+
+# Install .NET Core SDK (latest stable version)
+sudo apt install -y dotnet-sdk-6.0
