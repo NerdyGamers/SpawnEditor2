@@ -1998,11 +1998,17 @@ namespace SpawnEditor
                     this.axUOMap.SetCenter( 1280, 1024 );
                     break;
                     // Send the command
-                    this.axUOMap.SetCenter( 1150, 800 );                    this.axUOMap.xCenter = 1150;                    this.axUOMap.yCenter = 800;                    break;
+                    this.axUOMap.SetCenter( 1150, 800 );
+                    //this.axUOMap.xCenter = 1150;
+                    //this.axUOMap.yCenter = 800;
+                    break;
 
                 case WorldMap.Malas:
                     this.axUOMap.MapFile = (short)WorldMap.Malas;
-                    this.axUOMap.SetCenter( 1280, 1024 );                    this.axUOMap.xCenter = 1280;                    this.axUOMap.yCenter = 1024;                    break;
+                    this.axUOMap.SetCenter( 1280, 1024 );
+                    //this.axUOMap.xCenter = 1280;
+                    //this.axUOMap.yCenter = 1024;
+                    break;
             }
 
             // Refresh the spawn points for the current map
@@ -2034,11 +2040,6 @@ namespace SpawnEditor
                     // Check if the go command should use the 2 argument form
                     if( Spawn.CentreZ == short.MinValue )
                         GoCommand = string.Format( "{0}SpawnEditorGo {1} {2} {3}", this._CfgDialog.CfgRunUoCmdPrefix, Spawn.Map, Spawn.CentreX, Spawn.CentreY );
-                    this.stbMainLabel.Text = string.Format( "Loading {0} into {1}...", this.ofdLoadFile.FileName, ForceMap.ToString() );
-                this.stbMainLabel.Text = "Finished loading spawn file.";
-
-                    this.stbMainLabel.Text = string.Format( "Merging {0} into {1}...", this.ofdLoadFile.FileName, ForceMap.ToString() );
-                this.stbMainLabel.Text = "Finished merging spawn file.";
 
                     // Send the command
                     for( int x = 0; x < GoCommand.Length; x++ )
