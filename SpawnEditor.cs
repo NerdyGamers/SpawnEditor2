@@ -69,18 +69,18 @@ namespace SpawnEditor
         private System.Windows.Forms.Button btnMergeSpawn;
         private System.Windows.Forms.OpenFileDialog ofdLoadFile;
         private System.Windows.Forms.SaveFileDialog sfdSaveFile;
-        private System.Windows.Forms.ContextMenu mncSpawns;
+        private System.Windows.Forms.ContextMenuStrip mncSpawns;
         private System.Windows.Forms.GroupBox grpSpawnTypes;
         internal System.Windows.Forms.Button btnUpdateSpawn;
         private System.Windows.Forms.Button btnDeleteSpawn;
         private System.Windows.Forms.GroupBox grpSpawnList;
         internal System.Windows.Forms.GroupBox grpSpawnEdit;
-        private System.Windows.Forms.StatusBar stbMain;
+        private System.Windows.Forms.StatusStrip stbMain;
         private System.Windows.Forms.Button btnConfigure;
-        private System.Windows.Forms.MenuItem menuItem3;
-        private System.Windows.Forms.MenuItem mniDeleteAllSpawns;
-        private System.Windows.Forms.MenuItem mniSetSpawnAmount;
-        private System.Windows.Forms.MenuItem mniDeleteSpawn;
+        private System.Windows.Forms.ToolStripSeparator menuItem3;
+        private System.Windows.Forms.ToolStripMenuItem mniDeleteAllSpawns;
+        private System.Windows.Forms.ToolStripMenuItem mniSetSpawnAmount;
+        private System.Windows.Forms.ToolStripMenuItem mniDeleteSpawn;
         private System.Windows.Forms.Button btnRestoreSpawnDefaults;
         private System.Windows.Forms.CheckBox chkShowMapTip;
         private System.Windows.Forms.CheckBox chkShowSpawns;
@@ -88,10 +88,11 @@ namespace SpawnEditor
         private System.Windows.Forms.ComboBox cbxMap;
         private System.Windows.Forms.CheckBox chkHomeRangeIsRelative;
         private System.Windows.Forms.CheckBox chkSyncUO;
-        private System.Windows.Forms.ContextMenu mncLoad;
-        private System.Windows.Forms.MenuItem mniForceLoad;
-        private System.Windows.Forms.ContextMenu mncMerge;
-        private System.Windows.Forms.MenuItem mniForceMerge;
+        private System.Windows.Forms.ContextMenuStrip mncLoad;
+        private System.Windows.Forms.ToolStripMenuItem mniForceLoad;
+        private System.Windows.Forms.ContextMenuStrip mncMerge;
+        private System.Windows.Forms.ToolStripMenuItem mniForceMerge;
+        private System.Windows.Forms.ToolStripStatusLabel stbMainLabel;
         private System.Windows.Forms.Splitter splLeft;
         private System.Windows.Forms.Splitter splRight;
         private System.ComponentModel.IContainer components;
@@ -238,8 +239,8 @@ namespace SpawnEditor
             this.ttpSpawnInfo = new System.Windows.Forms.ToolTip(this.components);
             this.btnSaveSpawn = new System.Windows.Forms.Button();
             this.btnLoadSpawn = new System.Windows.Forms.Button();
-            this.mncLoad = new System.Windows.Forms.ContextMenu();
-            this.mniForceLoad = new System.Windows.Forms.MenuItem();
+            this.mncLoad = new System.Windows.Forms.ContextMenuStrip();
+            this.mniForceLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.trkZoom = new System.Windows.Forms.TrackBar();
             this.chkDrawStatics = new System.Windows.Forms.CheckBox();
             this.radShowMobilesOnly = new System.Windows.Forms.RadioButton();
@@ -280,16 +281,17 @@ namespace SpawnEditor
             this.lblMaxCount = new System.Windows.Forms.Label();
             this.lblMinDelay = new System.Windows.Forms.Label();
             this.grpSpawnList = new System.Windows.Forms.GroupBox();
-            this.mncSpawns = new System.Windows.Forms.ContextMenu();
-            this.mniSetSpawnAmount = new System.Windows.Forms.MenuItem();
-            this.menuItem3 = new System.Windows.Forms.MenuItem();
-            this.mniDeleteSpawn = new System.Windows.Forms.MenuItem();
-            this.mniDeleteAllSpawns = new System.Windows.Forms.MenuItem();
+            this.mncSpawns = new System.Windows.Forms.ContextMenuStrip();
+            this.mniSetSpawnAmount = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mniDeleteSpawn = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniDeleteAllSpawns = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdLoadFile = new System.Windows.Forms.OpenFileDialog();
             this.sfdSaveFile = new System.Windows.Forms.SaveFileDialog();
-            this.stbMain = new System.Windows.Forms.StatusBar();
-            this.mncMerge = new System.Windows.Forms.ContextMenu();
-            this.mniForceMerge = new System.Windows.Forms.MenuItem();
+            this.stbMain = new System.Windows.Forms.StatusStrip();
+            this.stbMainLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mncMerge = new System.Windows.Forms.ContextMenuStrip();
+            this.mniForceMerge = new System.Windows.Forms.ToolStripMenuItem();
             this.splLeft = new System.Windows.Forms.Splitter();
             this.splRight = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.axUOMap)).BeginInit();
@@ -339,7 +341,7 @@ namespace SpawnEditor
             // 
             // btnLoadSpawn
             // 
-            this.btnLoadSpawn.ContextMenu = this.mncLoad;
+            this.btnLoadSpawn.ContextMenuStrip = this.mncLoad;
             this.btnLoadSpawn.Location = new System.Drawing.Point(8, 16);
             this.btnLoadSpawn.Name = "btnLoadSpawn";
             this.btnLoadSpawn.Size = new System.Drawing.Size(40, 24);
@@ -353,12 +355,11 @@ namespace SpawnEditor
             // 
             // mncLoad
             // 
-            this.mncLoad.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mncLoad.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
                                                                                     this.mniForceLoad});
             // 
             // mniForceLoad
             // 
-            this.mniForceLoad.Index = 0;
             this.mniForceLoad.Text = "Force Load Into Current Map...";
             this.mniForceLoad.Click += new System.EventHandler(this.mniForceLoad_Click);
             // 
@@ -902,33 +903,29 @@ namespace SpawnEditor
             // 
             // mncSpawns
             // 
-            this.mncSpawns.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mncSpawns.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
                                                                                       this.mniSetSpawnAmount,
                                                                                       this.menuItem3,
                                                                                       this.mniDeleteSpawn,
                                                                                       this.mniDeleteAllSpawns});
-            this.mncSpawns.Popup += new System.EventHandler(this.mncSpawns_Popup);
+            this.mncSpawns.Opening += new System.ComponentModel.CancelEventHandler(this.mncSpawns_Opening);
             // 
             // mniSetSpawnAmount
             // 
-            this.mniSetSpawnAmount.Index = 0;
             this.mniSetSpawnAmount.Text = "&Set Amount...";
             this.mniSetSpawnAmount.Click += new System.EventHandler(this.mniSetSpawnAmount_Click);
             // 
             // menuItem3
             // 
-            this.menuItem3.Index = 1;
-            this.menuItem3.Text = "-";
+            
             // 
             // mniDeleteSpawn
             // 
-            this.mniDeleteSpawn.Index = 2;
             this.mniDeleteSpawn.Text = "&Delete";
             this.mniDeleteSpawn.Click += new System.EventHandler(this.mniDeleteSpawn_Click);
             // 
             // mniDeleteAllSpawns
             // 
-            this.mniDeleteAllSpawns.Index = 3;
             this.mniDeleteAllSpawns.Text = "Delete &All";
             this.mniDeleteAllSpawns.Click += new System.EventHandler(this.mniDeleteAllSpawns_Click);
             // 
@@ -946,21 +943,27 @@ namespace SpawnEditor
             this.sfdSaveFile.Title = "Save Spawn File";
             // 
             // stbMain
-            // 
+            //
+            this.stbMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                            this.stbMainLabel});
             this.stbMain.Location = new System.Drawing.Point(0, 551);
             this.stbMain.Name = "stbMain";
             this.stbMain.Size = new System.Drawing.Size(792, 22);
             this.stbMain.TabIndex = 3;
-            this.stbMain.Text = "Spawn Editor";
+            //
+            // stbMainLabel
+            //
+            this.stbMainLabel.Name = "stbMainLabel";
+            this.stbMainLabel.Size = new System.Drawing.Size(78, 17);
+            this.stbMainLabel.Text = "Spawn Editor";
             // 
             // mncMerge
             // 
-            this.mncMerge.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.mncMerge.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
                                                                                      this.mniForceMerge});
             // 
             // mniForceMerge
             // 
-            this.mniForceMerge.Index = 0;
             this.mniForceMerge.Text = "Force Merge Into Current Map...";
             this.mniForceMerge.Click += new System.EventHandler(this.mniForceMerge_Click);
             // 
@@ -1226,7 +1229,7 @@ namespace SpawnEditor
 
                 // Set the current map location in the status bar if there is no selection window
                 if( this._SelectionWindow == null )
-                    this.stbMain.Text = string.Format( "[X={0} Y={1} H={2}]", MapCentreX, MapCentreY, MapCentreZ );
+                    this.stbMainLabel.Text = string.Format( "[X={0} Y={1} H={2}]", MapCentreX, MapCentreY, MapCentreZ );
             }
             else if( e.button == 1 )
             {
@@ -1259,7 +1262,7 @@ namespace SpawnEditor
                     this._SelectionWindow.Index = this.axUOMap.AddDrawRect( this._SelectionWindow.X, this._SelectionWindow.Y, this._SelectionWindow.Width, this._SelectionWindow.Height, 2, 0x00FFFFFF );
 
                     // Set the current map location in the status bar
-                    this.stbMain.Text = string.Format( "[X1={0} Y1={1}] TO [X2={2} Y2={3}] (Width={4}, Height={5})", this._SelectionWindow.X, this._SelectionWindow.Y, ( this._SelectionWindow.X + this._SelectionWindow.Width ), ( this._SelectionWindow.Y + this._SelectionWindow.Height ), this._SelectionWindow.Width, this._SelectionWindow.Height );
+                    this.stbMainLabel.Text = string.Format( "[X1={0} Y1={1}] TO [X2={2} Y2={3}] (Width={4}, Height={5})", this._SelectionWindow.X, this._SelectionWindow.Y, ( this._SelectionWindow.X + this._SelectionWindow.Width ), ( this._SelectionWindow.Y + this._SelectionWindow.Height ), this._SelectionWindow.Width, this._SelectionWindow.Height );
                 }
             }
         }
@@ -1351,7 +1354,7 @@ namespace SpawnEditor
         private void trkZoom_ValueChanged(object sender, System.EventArgs e)
         {
             this.axUOMap.ZoomLevel = (short)this.trkZoom.Value;
-            this.stbMain.Text = this.DefaultZoomLevelText + this.axUOMap.ZoomLevel;
+            this.stbMainLabel.Text = this.DefaultZoomLevelText + this.axUOMap.ZoomLevel;
             this.RefreshSpawnPoints();
         }
 
@@ -1605,7 +1608,7 @@ namespace SpawnEditor
                 {
                     // Update the screen
                     this.Text = "Spawn Editor - " + this.ofdLoadFile.FileName;
-                    this.stbMain.Text = string.Format( "Loading {0}...", this.ofdLoadFile.FileName );
+                    this.stbMainLabel.Text = string.Format( "Loading {0}...", this.ofdLoadFile.FileName );
                     this.tvwSpawnPoints.Nodes.Clear();
                     this.Refresh();
                     this.LoadSpawnFile( this.ofdLoadFile.FileName, WorldMap.Internal );
@@ -1613,7 +1616,7 @@ namespace SpawnEditor
             }
             finally
             {
-                this.stbMain.Text = "Finished loading spawn file.";
+                this.stbMainLabel.Text = "Finished loading spawn file.";
             }
         }
 
@@ -1627,14 +1630,14 @@ namespace SpawnEditor
                 {
                     // Update the screen
                     this.Text = "Spawn Editor - " + this.ofdLoadFile.FileName;
-                    this.stbMain.Text = string.Format( "Merging {0}...", this.ofdLoadFile.FileName );
+                    this.stbMainLabel.Text = string.Format( "Merging {0}...", this.ofdLoadFile.FileName );
                     this.Refresh();
                     this.LoadSpawnFile( this.ofdLoadFile.FileName, WorldMap.Internal );
                 }
             }
             finally
             {
-                this.stbMain.Text = "Finished merging spawn file.";
+                this.stbMainLabel.Text = "Finished merging spawn file.";
             }
         }
 
@@ -1647,14 +1650,14 @@ namespace SpawnEditor
                 {
                     // Update the screen
                     this.Text = "Spawn Editor - " + this.sfdSaveFile.FileName;
-                    this.stbMain.Text = string.Format( "Saving {0}...", this.ofdLoadFile.FileName );
+                    this.stbMainLabel.Text = string.Format( "Saving {0}...", this.ofdLoadFile.FileName );
                     this.Refresh();
                     this.SaveSpawnFile( this.sfdSaveFile.FileName );
                 }
             }
             finally
             {
-                this.stbMain.Text = "Finished saving spawn file.";
+                this.stbMainLabel.Text = "Finished saving spawn file.";
             }
         }
 
@@ -1765,12 +1768,12 @@ namespace SpawnEditor
             this._CfgDialog.ShowDialog();
         }
 
-        private void mncSpawns_Popup(object sender, System.EventArgs e)
+        private void mncSpawns_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if( this.mncSpawns.SourceControl == this.tvwSpawnPoints )
             {
                 // Hide all menu items
-                foreach( MenuItem mi in this.mncSpawns.MenuItems )
+                foreach( ToolStripItem mi in this.mncSpawns.Items )
                     mi.Visible = false;
 
                 // Get the selected spawn point OR spawn object
@@ -1982,7 +1985,7 @@ namespace SpawnEditor
             this._SelectionWindow = null;
 
             // Refresh the status bar to show the current map
-            this.stbMain.Text = this.cbxMap.SelectedItem.ToString() + " Map Selected";
+            this.stbMainLabel.Text = this.cbxMap.SelectedItem.ToString() + " Map Selected";
             this.stbMain.Refresh();
 
             switch( (WorldMap)this.cbxMap.SelectedItem )
@@ -2034,11 +2037,11 @@ namespace SpawnEditor
                     // Check if the go command should use the 2 argument form
                     if( Spawn.CentreZ == short.MinValue )
                         GoCommand = string.Format( "{0}SpawnEditorGo {1} {2} {3}", this._CfgDialog.CfgRunUoCmdPrefix, Spawn.Map, Spawn.CentreX, Spawn.CentreY );
-                    else
-                        GoCommand = string.Format( "{0}SpawnEditorGo {1} {2} {3} {4}", this._CfgDialog.CfgRunUoCmdPrefix, Spawn.Map, Spawn.CentreX, Spawn.CentreY, Spawn.CentreZ );
+                    this.stbMainLabel.Text = string.Format( "Loading {0} into {1}...", this.ofdLoadFile.FileName, ForceMap.ToString() );
+                this.stbMainLabel.Text = "Finished loading spawn file.";
 
-                    // Send a carriage return to clear the current command
-                    SendMessage( UoClientHandle, 258, 13, 0 );
+                    this.stbMainLabel.Text = string.Format( "Merging {0} into {1}...", this.ofdLoadFile.FileName, ForceMap.ToString() );
+                this.stbMainLabel.Text = "Finished merging spawn file.";
 
                     // Send the command
                     for( int x = 0; x < GoCommand.Length; x++ )

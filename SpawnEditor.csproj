@@ -1,33 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 	<PropertyGroup>
 	    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	    <OutputType>WinExe</OutputType>
-	    <TargetFramework>net40</TargetFramework>
-	    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+            <TargetFramework>net6.0-windows</TargetFramework>
+            <UseWindowsForms>true</UseWindowsForms>
+            <EnableWindowsTargeting>true</EnableWindowsTargeting>
 	    <RootNamespace>SpawnEditor</RootNamespace>
 	    <AssemblyName>SpawnEditor</AssemblyName>
 	    <ApplicationIcon>App.ico</ApplicationIcon>
 	</PropertyGroup>
-	<ItemGroup>
-	    <Reference Include="UOMAPLib">
-	    	<HintPath>UOMAPLib.dll</HintPath>
-	    </Reference>
-	    <Reference Include="AxUOMAPLib">
-	    	<HintPath>AxUOMAPLib.dll</HintPath>
-	    </Reference>
-	    <Reference Include="stdole" />
-	    <Reference Include="System.Windows.Forms" />
-	    <Reference Include="System.Drawing" />
-	</ItemGroup>
+        <ItemGroup>
+            <Reference Include="UOMAPLib">
+                <HintPath>UOMAPLib.dll</HintPath>
+            </Reference>
+            <Reference Include="AxUOMAPLib">
+                <HintPath>AxUOMAPLib.dll</HintPath>
+            </Reference>
+        </ItemGroup>
 	<ItemGroup>
 	    <Content Include="Changes.txt" />
 	    <Content Include="ReadMe.htm" />
 	    <Content Include="App.ico" />
 	</ItemGroup>
-	<ItemGroup>
-	    <Compile Remove="XmlSpawner.cs" />
-	    <Compile Remove="SpawnEditorCommands.cs" />
-	    <None Include="XmlSpawner.cs" />
-	    <None Include="SpawnEditorCommands.cs" />
-	</ItemGroup>
+        <ItemGroup>
+            <Compile Remove="XmlSpawner.cs" />
+            <Compile Remove="SpawnEditorCommands.cs" />
+            <Compile Remove="SpawnEditor.Tests/**" />
+            <None Include="XmlSpawner.cs" />
+            <None Include="SpawnEditorCommands.cs" />
+        </ItemGroup>
 </Project>

@@ -2,12 +2,14 @@
 
 - [ ] Migrate project to modern .NET (e.g., .NET 6)
   - [x] Convert `.csproj` to SDK-style and run `dotnet build` (build currently fails: missing `System.Resources.Extensions`).
-  - Next: Resolve build errors and update `TargetFramework` to `net6.0-windows`.
+  - [x] Resolve build errors and update `TargetFramework` to `net6.0-windows` (build still fails: WindowsDesktop reference pack missing on non-Windows host).
+  - [x] Replace deprecated WinForms controls (`ContextMenu`, `StatusBar`) with supported alternatives.
 - [ ] Replace COM dependencies with managed alternatives
-  - Next: Research libraries to replace `UOMap.ocx` and `AxUOMAPLib.dll` (network access blocked; needs follow-up).
+  - [ ] Research libraries to replace `UOMap.ocx` and `AxUOMAPLib.dll`
+    - Investigated `ClassicUO/ClassicUO` and `UOMap/uomap-client`; no drop-in WinForms control identified yet.
 - [ ] Add automated unit tests
   - [x] Choose a test framework (NUnit) and set up a test project.
-  - Next: Write tests covering existing functionality.
+  - [x] Write tests covering existing functionality.
 - [ ] Introduce continuous integration
   - [x] Create a GitHub Actions workflow to run `dotnet build`.
   - Next: Ensure workflow passes once project builds successfully.
